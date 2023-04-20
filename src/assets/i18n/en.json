@@ -1,0 +1,23 @@
+{
+  "errors.401.message": "We're sorry, you don't have permission to access this feature.",
+  "errors.404.message": "The resource you're looking for were not found.",
+
+  "about.title": "About",
+  "about.version": "Version",
+  "about.environment": "Environment",
+  "about.description": "Tell us something about what your application does.",
+
+  "account.title": "My profile",
+
+  "dashboard.home.wellcome": "Wellcome, ",
+
+  "users.nousers.errormessage": "No users exist.",
+
+  "layout.usermenu.account": "Account",
+  "layout.usermenu.signout": "Sign out",
+  "layout.sidenav.home": "Home",
+  "layout.sidenav.dashboard": "Dashboard",
+  "layout.sidenav.users": "Users",
+  "layout.sidenav.account": "Account",
+  "layout.sidenav.about": "About"
+}

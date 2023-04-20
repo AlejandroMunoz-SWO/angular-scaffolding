@@ -1,0 +1,23 @@
+{
+  "errors.401.message": "Het spijt ons, u heeft geen toestemming voor deze functie.",
+  "errors.404.message": "De bron die u zoekt is niet gevonden.",
+
+  "about.title": "Over",
+  "about.version": "Versie",
+  "about.environment": "Omgeving",
+  "about.description": "Vertel ons iets over je sollicitatie.",
+
+  "account.title": "Mijn profiel",
+
+  "dashboard.home.wellcome": "Welterusten,",
+
+  "users.nousers.errormessage": "Er zijn geen gebruikers.",
+
+  "layout.usermenu.account": "Account",
+  "layout.usermenu.signout": "Uitschrijven",
+  "layout.sidenav.home": "Home",
+  "layout.sidenav.dashboard": "Dashboard",
+  "layout.sidenav.users": "Gebruikers",
+  "layout.sidenav.account": "Account",
+  "layout.sidenav.about": "Over"
+}

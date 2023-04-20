@@ -1,0 +1,72 @@
+# Node.js with Angular
+# Build a Node.js project that uses Angular.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- develop
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  npm_config_cache: $(Pipeline.Workspace)/.npm
+  artifactName: APP_$(Build.BuildNumber)
+  
+  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/heads/') }}:
+    branchName: $[ replace(variables['Build.SourceBranch'], 'refs/heads/', '') ]
+  
+  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/pull/') }}:
+    branchName: $[ replace(variables['System.PullRequest.TargetBranch'], 'refs/heads/', '') ]
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16.x'
+  displayName: 'Install Node.js'
+
+- script: |    
+    npm install -g @angular/cli@14.0.6
+  displayName: 'Install Angular CLI 14.0.6'
+
+- task: Cache@2
+  inputs:
+    key: 'npm | "$(Agent.OS)" | $(Build.SourcesDirectory)/package-lock.json'
+    restoreKeys: |
+        npm | "$(Agent.OS)"
+    path: $(Build.SourcesDirectory)/node_modules
+  displayName: 'Cache NPM packages'
+
+- script: npm ci
+  displayName: 'NPM run clean installation'
+
+- script: | 
+    npm install
+    ng build --configuration=development
+  displayName: 'npm install and build (Development)'
+  workingDirectory: '$(Build.SourcesDirectory)'
+  condition:  eq(variables['branchName'], 'develop')
+
+- script: | 
+    npm install
+    ng build --configuration=production
+  displayName: 'npm install and build (Production)'
+  workingDirectory: '$(Build.SourcesDirectory)'
+  condition:  eq(variables['branchName'], 'master')
+
+- task: ArchiveFiles@2
+  displayName: 'Archive files'
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/'
+    includeRootFolder: false
+    archiveType: zip
+    archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    replaceExistingArchive: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+ 

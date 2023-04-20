@@ -1,0 +1,17 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content>
+        <h2>{{ "about.title" | translate }}</h2>
+
+        <h3>{{ title }}</h3>
+        <h4>{{ "about.version" | translate }}: {{ version }}</h4>
+        <h4>{{ "about.environment" | translate }}: {{ environment }}</h4>
+
+        <div>
+          {{ "about.description" | translate | flatten }}
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

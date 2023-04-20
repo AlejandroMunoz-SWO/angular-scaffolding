@@ -1,0 +1,17 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content>
+        <h2>401 Unauthorized</h2>
+
+        <p *ngIf="!hasServerError">
+          {{ "errors.401.message" | translate }}
+        </p>
+        <p *ngIf="hasServerError">
+          {{ errorService.getLastServerError() }}
+        </p>
+        <span> Please, report this error to your administrator. </span>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

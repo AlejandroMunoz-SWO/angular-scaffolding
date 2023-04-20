@@ -1,0 +1,10 @@
+{
+    "/api/**/*": {
+        "target": "https://localhost:5001",
+        "secure": true
+    },
+    "/v2/track": {
+        "target": "https://dc.services.visualstudio.com",
+        "secure": true
+    }
+}

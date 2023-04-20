@@ -1,0 +1,23 @@
+{
+  "errors.401.message": "Lo sentimos, no tienes permisos para acceder a esta función. :(",
+  "errors.404.message": "El recurso que buscaba no fue encontrdo.",
+
+  "about.title": "Acerca de",
+  "about.version": "Versión",
+  "about.environment": "Entorno",
+  "about.description": "Cuéntanos algo acerca de tu aplicación.",
+
+  "account.title": "Mi perfil",
+
+  "dashboard.home.wellcome": "Bienvenid@, ",
+
+  "users.nousers.errormessage": "No existen usuarios.",
+
+  "layout.usermenu.account": "Mi perfil",
+  "layout.usermenu.signout": "Cerrar sesión",
+  "layout.sidenav.home": "Inicio",
+  "layout.sidenav.dashboard": "Panel de control",
+  "layout.sidenav.users": "Usuarios",
+  "layout.sidenav.account": "Cuenta",
+  "layout.sidenav.about": "Acerca de"
+}

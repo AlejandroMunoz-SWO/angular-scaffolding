@@ -1,0 +1,39 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content>
+        <h2>Users</h2>
+
+        <div class="container" fxLayout="row" fxLayoutAlign="center none">
+          <div fxFlex="50%" class="text-center no-records animate">
+            <mat-icon>people_outline</mat-icon>
+
+            <p *ngIf="users.length === 0">No users exist.</p>
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <ng-container
+                [matColumnDef]="column"
+                *ngFor="let column of displayedColumns"
+              >
+                <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+                <td mat-cell *matCellDef="let user">{{ user[column] }}</td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr
+                mat-row
+                *matRowDef="let userrow; columns: displayedColumns"
+              ></tr>
+            </table>
+            <mat-paginator
+              #paginator
+              [pageSizeOptions]="pageSizes"
+              showFirstLastButtons
+            ></mat-paginator>
+          </div>
+          <mat-icon> </mat-icon>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

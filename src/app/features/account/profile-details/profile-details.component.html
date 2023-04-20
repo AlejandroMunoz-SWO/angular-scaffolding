@@ -1,0 +1,18 @@
+<div class="profile-card">
+
+  <img *ngIf="!photo" src="assets/images/user.png" [alt]="fullName">
+
+  <img *ngIf="photo" [src]="photo" [alt]="fullName">
+
+  <h2 class="title">
+    {{fullName}}
+  </h2>
+
+  <label>
+    <strong>{{alias}}</strong>
+  </label>
+  <br>
+  <label>
+    {{email}}
+  </label>
+</div>

@@ -1,0 +1,23 @@
+{
+  "errors.401.message": "Es tut uns leid, Sie haben keine Berechtigung, auf diese Funktion zuzugreifen.",
+  "errors.404.message": "Die von Ihnen gesuchte Ressource wurde nicht gefunden.",
+
+  "about.title": "Über",
+  "about.version": "Version",
+  "about.environment": "Umgebung",
+  "about.description": "Erzählen Sie uns etwas über Ihre Bewerbung.",
+
+  "account.title": "Mein Profil",
+
+  "dashboard.home.wellcome": "Wohlfahrt,",
+
+  "users.nousers.errormessage": "Es gibt keine Benutzer.",
+
+  "layout.usermenu.account": "Account",
+  "layout.usermenu.signout": "Abmelden",
+  "layout.sidenav.home": "Startseite",
+  "layout.sidenav.dashboard": "Dashboard",
+  "layout.sidenav.users": "Benutzer",
+  "layout.sidenav.account": "Account",
+  "layout.sidenav.about": "Über"
+}
